@@ -1,4 +1,6 @@
 import streamlit
+import pandas
+
 streamlit.title("My fist app /n")
 streamlit.header(" I want to become snowflake SME")
 streamlit.text("learning from Snowflake learn")
