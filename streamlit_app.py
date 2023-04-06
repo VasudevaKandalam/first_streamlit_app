@@ -1,2 +1,2 @@
 import streamlit
-stremlit.title("My fist app")
+streamlit.title("My fist app")
