@@ -1,7 +1,7 @@
 import streamlit
 import pandas
 import requests
-import snowfalke.connector
+import snowflake.connector
 
 streamlit.title("My fist app /n")
 streamlit.header(" I want to become snowflake SME")
