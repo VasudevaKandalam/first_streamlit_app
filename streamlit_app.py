@@ -1,6 +1,7 @@
 import streamlit
 import pandas
 import requests
+import snowfalke.connector
 
 streamlit.title("My fist app /n")
 streamlit.header(" I want to become snowflake SME")
@@ -29,3 +30,10 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_cho
 #jsonData=streamlit.text(fruityvice_response.json())
 jsonNormalized=pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(jsonNormalized)
+
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cur = my_cnx.cursor()
+my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+my_data_row = my_cur.fetchone()
+streamlit.text("Hello from Snowflake:")
+streamlit.text(my_data_row)
